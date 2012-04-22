@@ -49,15 +49,16 @@ jedi_js.prototype.listeners = function () {
 
 jedi_js.prototype.challengeOneJquery = function(){
 	$(document).ready(function() {
-		$("#challengeOneImageJq").animate({left:"+=200"},2000,function(){});
+		$("#challengeOneImageJq").css('left', '');
+		$("#challengeOneImageJq").animate({left:"+=200"},2000);
 	});
 }
 
 jedi_js.prototype.challengeOneJavascript = function(){
 	var self=this;
 	var x = 1;
+	document.getElementById("challengeOneImageJavascript").style.position="relative";
 	var endInterval = setInterval(function(){
-		document.getElementById("challengeOneImageJavascript").style.position="relative";
 		document.getElementById("challengeOneImageJavascript").style.left=x+"px";
 		if (x == 200)
 		{
