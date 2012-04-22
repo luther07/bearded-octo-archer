@@ -48,7 +48,9 @@ jedi_js.prototype.listeners = function () {
 ****************************************************************************************/
 
 jedi_js.prototype.challengeOneJquery = function(){
-	
+	$(document).ready(function() {
+		$("#challengeOneImageJq").animate({left:"+=200"},2000,function(){});
+	});
 }
 
 jedi_js.prototype.challengeOneJavascript = function(){
