@@ -53,11 +53,17 @@ jedi_js.prototype.challengeOneJquery = function(){
 
 jedi_js.prototype.challengeOneJavascript = function(){
 	var self=this;
-	for(i=1;i<=200;i++)
-	{
+	var x = 1;
+	var endInterval = setInterval(function(){
 		document.getElementById("challengeOneImageJavascript").style.position="relative";
-		document.getElementById("challengeOneImageJavascript").style.left=i+"px";
-	}
+		document.getElementById("challengeOneImageJavascript").style.left=x+"px";
+		if (x == 200)
+		{
+			window.clearInterval(endInterval);
+		}
+		x++;
+	}, 10);
+
 }
 
 /****************************************************************************************
