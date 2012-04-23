@@ -74,13 +74,41 @@ jedi_js.prototype.challengeOneJavascript = function(){
 ****************************************************************************************/
 
 jedi_js.prototype.challengeTwoJquery = function(){
-	
+	$(document).ready(function() {
+		// update the img nodes, adding and removing carouselImagejQueryActive class
+		// $("#challengeTwoImageJq > img").removeClass('carouselImagejQueryActive');
+		// each function iterates through the images and toggles the class
+		$("#challengeTwoImageJq > img").each(function() {
+			$(this).toggleClass('carouselImagejQueryActive');
+		}); 
+	});	
 }
 
 jedi_js.prototype.challengeTwoJavascript = function(){
 	var self=this;
+	var i=0;
+	var t;
+	var timer_on=0;
+		
+	function turnCarousel(){
+		//modify node classes
+		var children = document.getElementById("challengeTwoImageJavascript").getElementsByTagName("*");
+		//repeat
+		var t = setTimeout("turnCarousel()",2000);
 
-}
+	} //end function turnCarousel
+
+	function startCarousel()
+	{
+		if(!timer_on)
+		{
+			timer_on=1;
+			turnCarousel();
+		}
+
+	} //end function startCarousel
+
+} //end function challengeTwoJavascript
 
 /****************************************************************************************
 									CHALLENGE THREE
