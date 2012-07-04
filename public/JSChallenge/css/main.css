@@ -1,0 +1,255 @@
+body{
+	color: #131D29;
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+	font-family:Arial,Sans-serif;
+}
+
+
+.withBorder{
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+
+/****************************************************************************************
+									MAIN CONTAINER
+****************************************************************************************/
+#mainContainer{
+	position: relative;
+	top: 10px;
+	width: 960px;
+	height: 530px;
+	margin-left: auto;
+	margin-right:auto;
+}
+/****************************************************************************************
+									CONTENT
+****************************************************************************************/
+#content{
+	padding:0;
+	position:relative;
+	width:100%;
+	border: 0px solid transparent;
+	overflow:hidden;
+/*	background:white;*/
+}
+
+/****************************************************************************************
+								SECTIONS
+****************************************************************************************/
+
+.section{
+	-moz-box-shadow: 0 0 1px 1px #E1E1E1 inset;
+	-webkit-box-shadow: 0 0 1px 1px #E1E1E1 inset;
+	box-shadow: 0 0 1px 1px #E1E1E1 inset;
+	background: -webkit-gradient(linear, 50% 100%, 50% 0%, from(#D1D9E0), color-stop(0.15, #E0E5E9), color-stop(0.25, #E3E7EA), color-stop(0.85, #EAECEF), color-stop(0.95, #F3F3F4), to(#F3F3F4));
+	background: -moz-linear-gradient(0px 100% 90deg, #D1D9E0 0%, #E0E5E9 15%, #E3E7EA 25%, #EAECEF 85%, #F3F3F4 95%, #F3F3F4 100%) no-repeat scroll 0 0 transparent;
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#D1D9E0', endColorstr='#F3F3F4');
+	width:100%;
+	height:400px;
+	padding:20px;
+	color:#4A6CA2;
+	margin:30px 0;
+}
+
+.sectionChallengeButton{
+	clear:both;
+	float:left;
+	margin:30px;
+	margin-left:100px;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 12px/100% Arial, Helvetica, sans-serif;
+	-webkit-border-radius: .5em;
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	color: #5b5b5b;
+	border: solid 1px #B4BEBF;
+	padding:0.5em 2em;
+	background: -webkit-gradient(linear, left bottom, left top, from(#E4E4E4), to(#FFFFFF));
+	background: -moz-linear-gradient(0px 100% 90deg, #E4E4E4, #EEEEEE 100%);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#E4E4E4', endColorstr='#FFFFFF');
+}
+
+.sectionChallengeButton:hover{
+	background: -webkit-gradient(linear, left bottom, left top, from(#EEEEEE), to(#F8F8F8));
+	background: -moz-linear-gradient(0px 100% 90deg, #EEEEEE, #F8F8F8 100%) repeat scroll 0 0 transparent;
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#E4E4E4', endColorstr='#F8F8F8');
+}
+
+.sectionChallengeButton:active{
+	-webkit-box-shadow:0 0 3px 2px #B4B4B4 inset;
+	-moz-box-shadow:0 0 3px 2px #B4B4B4 inset;
+	box-shadow:0 0 3px 2px #B4B4B4 inset;
+}
+
+.sectionDescription{
+	margin:5px 0;
+}
+
+.sectionChallenge{
+	width:100%;
+}
+
+.sectionChallengeSubtitle{
+	text-align:center;
+	width:100%;
+	height:20px;
+	font-weight:bold;
+	margin-bottom:10px;
+}
+
+.bold{
+	font-weight:bold;
+}
+
+.sectionTitle{
+	font-family:Lucida Grande;
+	font-size:18px;
+	font-weight:bold;
+	color:#50678A;
+}
+
+#title{
+	width:100%;
+	height:105px;
+}
+
+#titleDescription{
+	font-weight:bold;
+	font-size:30px;
+	font-family:Lucida Grande;
+	margin-top:20px;
+}
+
+#titlePicture{
+	margin-top:-30px;
+}
+
+#titlePicture,#titleDescription{
+	float:left;
+}
+
+
+/****************************************************************************************
+								Challenge One
+****************************************************************************************/
+
+
+.sectionChallengeFloat{
+	float:left;
+    margin: 3% 5%;
+    width: 350px;
+}
+
+.sectionChallengeImage{
+	float:left;
+	width:100px;
+}
+
+.sectionChallengeImage img{
+	width:100px;
+}
+
+.sectionChallengeImageDest{
+	border:1px dashed gray;
+	width:100px;
+	height:100px;
+	position:relative;
+	left:200px;
+}
+
+#challengeOneImageJq,#challengeOneImageJavascript{
+	position:relative;
+	z-index:30;
+}
+
+
+/****************************************************************************************
+								Challenge Two
+****************************************************************************************/
+
+.carouselImage{
+	display:none;
+}
+
+.carouselImageJavascriptActive,.carouselImagejQueryActive{
+	display:block;
+}
+
+.carouselImageContainer{
+	width:200px;
+	height:200px;
+	border:2px solid gray;
+	overflow:hidden;
+	margin-left:60px;
+}
+
+.carouselImageContainer img{
+	width:200px;
+}
+
+/****************************************************************************************
+								Challenge Three
+****************************************************************************************/
+
+#sectionThreeTabs{
+	width:300px;
+	height:22px;
+	margin-top:20px;
+}
+
+.sectionThreeTab{
+	border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	float:left;
+	padding:2px 5px;
+	margin: 0 2px;
+	color:#92939C;
+	float:left;
+	cursor:pointer;
+	-moz-box-shadow: 0 0 1px 1px #BFBFBF inset;
+	-webkit-box-shadow: 0 0 1px 1px #BFBFBF inset;
+	box-shadow: 0 0 1px 1px #BFBFBF inset;
+	background: -webkit-gradient(linear, 50% 100%, 50% 0%, from(#D8E1E7), color-stop(0.25,#E5EAF0), color-stop(0.5, #EFF2F5), color-stop(0.85, #F1F4F6), to(#FCFCFD));
+	background:-moz-linear-gradient(0px 100% 90deg, #D8E1E7 0%, #E5EAF0 25%, #EFF2F5 50%, #F1F4F6 85%, #FCFCFD 100%) no-repeat scroll 0 0 transparent;
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#D8E1E7', endColorstr='#FCFCFD');
+}
+
+.sectionThreeTab:not(.tabActive):hover{
+	background: -webkit-gradient(linear, 50% 100%, 50% 0%, from(#FCFCFD), to(#D8E1E7));
+	background:-moz-linear-gradient(0px 100% 90deg, #FCFCFD, #D8E1E7 ) no-repeat scroll 0 0 transparent;
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#D8E1E7', endColorstr='#FCFCFD');
+}
+
+.tabActive{
+	font-weight:bold;
+	color:#50678A;
+}
+
+#sectionTabContent{
+	padding:10px;
+    background: none repeat scroll 0 0 white;
+    border: 2px solid #BFBFBF;
+    height: auto;
+    width: 300px;
+font-family:Lucida Grande;
+color:#50678A;
+text-align:center;
+font-size:14px;
+}
+
+.sectionTipTitle{
+	color:gray;
+	font-size:18px;
+	font-weight:bold;
+}

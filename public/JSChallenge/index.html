@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" debug="true">
+	<head>
+		<script type="text/javascript">
+			if (window!=top)
+				top.location.href = window.location.href;
+	    </script>
+		<link href="css/main.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<title>JS Jedi Challenge</title>
+	</head>
+	<body>
+		<div id="velo" style="display:none"></div>
+		<div id="overlayMessages" style='display:none'class='overlay withBorder'></div>
+		<div id="mainContainer">
+			<div id='title'>
+				<div id='titleDescription'>
+					Jedi JS Challenge
+				</div>
+			</div>
+			<div class='section withBorder'>
+				<div class='sectionTitle'>
+					1. - Padawans kill bugs
+				</div>
+				<div class='sectionContent'>
+					<div class='sectionDescription'>
+						Move the icon 200px to the right. Both with and without the help of jQuery. <br />
+						<span class='bold'>Bonus:</span> Move it progressively! No rush there is.
+					</div>
+					<div class='sectionTips'>
+						<span class='sectionTipTitle'>Tips </span>
+						<ul style='margin:10px 20px;padding:0'>
+							<li> The id of the images are <span class='bold'>challengeOneImageJq</span> 
+								and <span class='bold'>challengeOneImageJavascript</span></li>
+							<li> You just have to fill the functions named <span class='bold'>challengeOneJquery</span> 
+								and <span class='bold'>challengeOneJavascript</span></li>
+						</ul>
+					</div>
+					<div class='sectionChallenge'>
+						<div class='sectionChallengeFloat'>
+							<div class='sectionChallengeSubtitle'>jQuery</div>
+							<div style='height:110px'>
+								<div id='challengeOneImageJq' class='sectionChallengeImage'>
+									<img src='img/BugsLarge.png'/>
+								</div>
+								<div class='sectionChallengeImageDest'>
+								
+								</div>
+							</div>
+							<div class='sectionChallengeButton' id='firstChallengeJquery'>
+								Use the force!
+							</div>
+						</div>
+						<div class='sectionChallengeFloat'>
+							<div class='sectionChallengeSubtitle'>Javascript</div>
+							<div>
+								<div class='sectionChallengeImage' id='challengeOneImageJavascript'>
+									<img src='img/BugsLarge.png'/>
+								</div>
+								<div class='sectionChallengeImageDest'>
+
+								</div>
+							</div>
+							<div class='sectionChallengeButton' id='firstChallengeJavascript'>
+								Use the force!
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='section withBorder' style='height:550px'>
+				<div class='sectionTitle'>
+					2. - The way of the force
+				</div>
+				<div class='sectionContent' >
+					<div class='sectionDescription'>
+						The are several images inside the div. Make a little carousel that updates the image every 2 seconds.<br />
+						<span class='bold'>Bonus:</span> Cycle the images.
+					</div>
+					<div class='sectionTips'>
+						<span class='sectionTipTitle'>Tips </span>
+						<ul style='margin:10px 20px;padding:0'>
+							<li> The id of the image containers are <span class='bold'>challengeTwoImageJq</span> 
+								and <span class='bold'>challengeTwoImageJavascript</span></li>
+							<li> You just have to fill the functions named <span class='bold'>challengeTwoJquery</span> 
+								and <span class='bold'>challengeTwoJavascript</span></li>
+							<li> The images have an attribute <span class='bold'>imgn</span> that is the number of the image. 
+								It goes from 1 to 4</li>
+							<li> All the images have the <span class='bold'>carouselImage</span> class. The class of the active image 
+								is carouselImagejQueryActive for jQuery and carouselImageJavascriptActive for javascript.
+								</li> 
+						</ul>
+					</div>
+					<div class='sectionChallenge'>
+						<div class='sectionChallengeFloat'>
+							<div class='sectionChallengeSubtitle'>jQuery</div>
+							<div class='carouselImageContainer'>
+								<div id='challengeTwoImageJq' class='sectionChallengeCarouselImage'>
+									<img id='imgq1' imgn='1' class='carouselImage carouselImagejQueryActive' src='img/image1.jpg'/>
+									<img id='imgq2' imgn='2' class='carouselImage' src='img/image2.jpg'/>
+									<img id='imgq3' imgn='3' class='carouselImage' src='img/image3.jpg'/>
+									<img  id='imgq4'  imgn='4' class='carouselImage' src='img/image4.jpg'/>
+								</div>
+							</div>
+							<div class='sectionChallengeButton' id='secondChallengeJquery'>
+								Use the force!
+							</div>
+						</div>
+						<div class='sectionChallengeFloat'>
+							<div class='sectionChallengeSubtitle'>Javascript</div>
+							<div class='carouselImageContainer'>
+								<div id='challengeTwoImageJavascript' class='sectionChallengeCarouselImage'>
+									<img id='imgj1' imgn='1' class='carouselImage carouselImageJavascriptActive' src='img/image1.jpg'/>
+									<img id='imgj2' imgn='2' class='carouselImage' src='img/image2.jpg'/>
+									<img id='imgj3' imgn='3' class='carouselImage' src='img/image3.jpg'/>
+									<img  id='imgj4' imgn='4' class='carouselImage' src='img/image4.jpg'/>
+								</div>
+							</div>
+							<div class='sectionChallengeButton' id='secondChallengeJavascript'>
+								Use the force!
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class='section withBorder' style='height:430px'>
+				<div class='sectionTitle'>
+					3. - Yoda Lessons
+				</div>
+				<div class='sectionContent' >
+					<div class='sectionDescription'>
+						The following tabs load new content into the div. But something is broken, can you figure it out?<br />
+						<span class='bold'>Bonus:</span> Add loading icon to the ajax calls (img/loading.png). You may have to add a delay to be able to see the icon.
+					</div>
+					<div class='sectionTips'>
+						<span class='sectionTipTitle'>Tips </span>
+						<ul style='margin:10px 20px;padding:0'>
+							<li> When you click on a tab, an ajax get request is done to retrieve the content of an html file.
+								These html files are located in the lessons folder.</li>
+							<li> You just have to debug and enhance the <span class='bold'>challengeThree</span> function</li>
+							<li> There are three different errors in the function. Can you debug them?</li>
+						</ul>
+					</div>
+					<div class='sectionChallenge'>
+						<div id='sectionThreeTabs' >
+							<div id='' class='sectionThreeTab tabActive' lesson='first'>
+								Try
+							</div>
+							<div class='sectionThreeTab' lesson='second'>
+								Anger
+							</div>
+							<div class='sectionThreeTab' lesson='third'>
+								Size
+							</div>
+						</div>
+						<div id='sectionTabContent' class='withBorder'>
+							Do or do not... there is no try.	
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="loading" class="grayBackground withBorder10" style="display:none">
+				<img alt="Loading..." src="img/ajax-loader.gif">
+			</div>
+			<div id="content" >
+
+			</div>
+			<div id="footer" class="titleFont">
+
+			</div>
+		</div>
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
