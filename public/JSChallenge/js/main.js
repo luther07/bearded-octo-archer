@@ -48,24 +48,28 @@ jedi_js.prototype.listeners = function () {
 ****************************************************************************************/
 
 jedi_js.prototype.challengeOneJquery = function(){
+	var duration=2000;
+
 	$(document).ready(function() {
-		$("#challengeOneImageJq").css('left', '');
-		$("#challengeOneImageJq").animate({left:"+=200"},2000);
+		$("#challengeOneImageJq").css('left', ''); // clear any modifications to left attr 
+		$("#challengeOneImageJq").animate({left:"+=200"},duration);
 	});
 }
 
 jedi_js.prototype.challengeOneJavascript = function(){
 	var self=this;
-	var x = 1;
+	var relativePosition = 1; //pixels
+	var intervalMillis=10;
+	var totalPixelMove=200;
+
 	document.getElementById("challengeOneImageJavascript").style.position="relative";
-	var endInterval = setInterval(function(){
-		document.getElementById("challengeOneImageJavascript").style.left=x+"px";
-		if (x == 200)
-		{
+	var endInterval = setInterval(function() {
+		document.getElementById("challengeOneImageJavascript").style.left = relativePosition + "px";
+		if (relativePosition >= totalPixelMove) {
 			window.clearInterval(endInterval);
 		}
-		x++;
-	}, 10);
+		relativePosition++;
+	}, intervalMillis);
 
 }
 
@@ -73,60 +77,82 @@ jedi_js.prototype.challengeOneJavascript = function(){
 									CHALLENGE TWO
 ****************************************************************************************/
 
-jedi_js.prototype.challengeTwoJquery = function(){
+jedi_js.prototype.challengeTwoJquery = function() {
+	var duration=2000;
+
 	$(document).ready(function() {
-		// update the img nodes, adding and removing carouselImagejQueryActive class
-		// $("#challengeTwoImageJq > img").removeClass('carouselImagejQueryActive');
-		// each function iterates through the images and toggles the class
-		$("#challengeTwoImageJq > img").each(function() {
-			$(this).toggleClass('carouselImagejQueryActive');
-		}); 
+		timedCarousel();
+
+		function timedCarousel() {
+			if($(".carouselImagejQueryActive").next().length == 0) {
+				$(".carouselImagejQueryActive").removeClass('carouselImagejQueryActive');
+				$("#challengeTwoImageJq > img").first().addClass('carouselImagejQueryActive');
+			}
+
+			else {
+				$(".carouselImagejQueryActive").removeClass('carouselImagejQueryActive').next().addClass('carouselImagejQueryActive');
+			}
+
+			setTimeout(timedCarousel, duration);
+		}
 	});	
 }
 
-jedi_js.prototype.challengeTwoJavascript = function(){
+jedi_js.prototype.challengeTwoJavascript = function() {
 	var self=this;
-	var i=0;
-	var t;
-	var timer_on=0;
-		
-	function turnCarousel(){
-		//modify node classes
-		var children = document.getElementById("challengeTwoImageJavascript").getElementsByTagName("*");
-		//repeat
-		var t = setTimeout("turnCarousel()",2000);
+	var activeNode = document.getElementById("challengeTwoImageJavascript").firstChild;
+	var firstNode = document.getElementById("challengeTwoImageJavascript").firstChild;
+	var lastNode = document.getElementById("challengeTwoImageJavascript").lastChild;
+	var activeClassName = "carouselImage carouselImageJavascriptActive";
 
-	} //end function turnCarousel
-
-	function startCarousel()
-	{
-		if(!timer_on)
-		{
-			timer_on=1;
-			turnCarousel();
+	timedCarousel();
+	
+	function timedCarousel() {
+		if(activeNode.isSameNode(lastNode)) {
+			//update class of previous node, advance the node, then update current node class
+			activeNode.previousSibling.className = 'carouselImage';
+			activeNode = firstNode;
+			activeNode.className = activeClassName;
 		}
 
-	} //end function startCarousel
+		else if(activeNode.isSameNode(firstNode)) {
+			//update class of previous node, advance the node, then update current node class
+			lastNode.className = 'carouselImage';
+			activeNode = activeNode.nextSibling;
+			activeNode.className = activeClassName;
+		}
 
-} //end function challengeTwoJavascript
+		else {
+			//update class of previous node, advance the node, then update current node class
+			activeNode.previousSibling.className = 'carouselImage';
+			activeNode = activeNode.nextSibling;
+			activeNode.className = activeClassName;
+		}
+
+		setTimeout(timedCarousel, 2000);		
+	}
+}
 
 /****************************************************************************************
 									CHALLENGE THREE
 ****************************************************************************************/
 
 jedi_js.prototype.challengeThree = function (){
-	
-	$('.sectionThreeTab:not(.tabActive)').click(function(){
+
+	$('.sectionThreeTab').click(function(){
 		$('.tabActive').removeClass('tabActive');
 		$(this).addClass('tabActive');
-		var lesson=$(this).attr('lessoN');
-		$.ajax({
-			type: "GET",
-			url: 'lessons/'+lesson+'.htm',
-			success:function(data){
-				$('#sectionTabContent').append(data);
-			}
-		});	
+		$('#sectionTabContent').empty().append("<img src='img/ajax-loader.gif'/>");
+		var lesson=$(this).attr('lesson');
+		setTimeout(function() {
+			$.ajax({
+				type: "GET",
+				url: 'lessons/'+lesson+'.htm',
+				success:function(data){
+					$('#sectionTabContent').empty().append(data);
+				}
+			});
+		}, 1000);	
 	});
 
 }
